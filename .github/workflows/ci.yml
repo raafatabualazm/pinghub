@@ -19,3 +19,15 @@ jobs:
         run: |
           pip install semgrep
           semgrep scan --config p/owasp-top-ten --config p/python --error
+
+    sca:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Trivy filesystem (dependencies)
+          uses: aquasecurity/trivy-action@master
+          with:
+            scan-type: fs
+            scan-ref: .
+            severity: HIGH,CRITICAL
+            exit-code: '1'
