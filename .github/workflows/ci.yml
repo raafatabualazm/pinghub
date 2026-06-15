@@ -20,7 +20,7 @@ jobs:
           pip install semgrep
           semgrep scan --config p/owasp-top-ten --config p/python --error
 
-    sca:
+  sca:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
