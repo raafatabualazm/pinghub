@@ -1,0 +1,2 @@
+Flask==3.0.3
+requests==2.19.1   # PLANTED VULN: old release with known CVEs (the SCA target)
